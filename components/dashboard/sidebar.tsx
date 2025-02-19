@@ -52,9 +52,11 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
     <>
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 w-64 bg-background border-r z-30',
+          'fixed inset-y-0 left-0 w-64 bg-gradient-to-b from-[#1D1E30] to-black border-r z-30',
           'lg:relative lg:block',
-          !open && 'hidden'
+          'transform transition-transform duration-300 ease-in-out',
+          open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0',
+          'lg:transform-none'
         )}
       >
         <div className="flex h-16 items-center justify-between px-4 lg:justify-center border-b">
@@ -91,7 +93,11 @@ export function Sidebar({ open, setOpen }: SidebarProps) {
       </aside>
       {open && (
         <div
-          className="fixed inset-0 z-20 bg-background/80 backdrop-blur-sm lg:hidden"
+          className={cn(
+            "fixed inset-0 z-20 bg-background/80 backdrop-blur-sm lg:hidden",
+            "transition-opacity duration-300 ease-in-out",
+            open ? "opacity-100" : "opacity-0"
+          )}
           onClick={() => setOpen(false)}
         />
       )}

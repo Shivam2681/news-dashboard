@@ -9,8 +9,6 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8">
       <MainDashboard />
-      <div className="grid gap-6 md:grid-cols-2">
-      </div>
       <div className="grid gap-8 lg:grid-cols-2">
         <NewsAnalytics />
         <PayoutTable />

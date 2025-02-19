@@ -27,7 +27,7 @@ export default function DashboardLayout({
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-y-hidden">
       <Header setSidebarOpen={setSidebarOpen} />
       <div className="flex h-[calc(100vh-4rem)] pt-16">
         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
